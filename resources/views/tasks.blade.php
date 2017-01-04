@@ -1,13 +1,15 @@
-<!-- resources/views/tasks.blade.php
-    Basic Task List - Tutorial 
-    https://laravel.com/docs/5.1/quickstart -->
+{{-- /views/tasks.blade.php
+    Basic Task List - Tutorial
+    https://laravel.com/docs/5.1/quickstart
+    --}}
+
 
     @extends('layouts.app')
 
 
     @section('content')
 
-        <!-- Create Task Form -->
+        {{-- Create task form  --}}
         <div class="container">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -16,14 +18,14 @@
                 </div>
 
             <div class="panel-body">
-            <!-- Display Validation Errors -->
+            {{-- Display validation errors  --}}
             @include('common.errors')
 
-            <!-- New Task Form -->
+            {{-- New Task form  --}}
             <form action="/task" method="POST" class="form-horizontal">
                 {{ csrf_field() }}
 
-                <!-- Task Name -->
+                {{-- Task Name  --}}
                 <div class="form-group">
                     <label for="task" class="col-sm-3 control-label">Task</label>
 
@@ -32,7 +34,7 @@
                     </div>
                 </div>
 
-                <!-- Add Task Button -->
+                {{-- Add task button  --}}
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-sm-6">
                         <button type="submit" class="btn btn-default">
@@ -43,7 +45,7 @@
             </form>
         </div>
 
-        <!-- Current Tasks -->
+        {{-- Current tasks  --}}
         @if(count($tasks) > 0)
 
             <div class="panel panel-default">
@@ -60,12 +62,12 @@
                             <th>&nbsp;</th>
                         </thead>
 
-                        <!-- Table Body -->
+                        {{-- Table Body  --}}
                         <tbody>
                             @foreach($tasks as $task)
                                 <tr>
 
-                                    <!-- Task Name -->
+                                    {{-- Task Name  --}}
                                     <td class="table-text">
                                         <div> {{ $task->name }} </div>
                                     </td>
